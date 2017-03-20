@@ -127,116 +127,40 @@
 			<section class="content">
 
 				<div class="block-content">
-					<h3 class="block-title">Portfolio</h3>
+					<h3 class="block-title">Comparação r4.9 - r4.10 - Área: MLOC, Cor: Complexidade Ciclomática</h3>
 					<div class="row">
-						<div class="col-md-12">
-							<ul id="filters">
-							  <li class="active" data-filter="*">All</li>
-							  <li data-filter=".graphic">Graphic</li>
-							  <li data-filter=".web">Web</li>
-							  <li data-filter=".video">Video</li>
-							  <li data-filter=".apps">Apps</li>
-							</ul>
-							<div id="projects">
-								  <div class="project graphic apps">
-									<a class="open-project" href="project-1.html">
-										<div class="project-overlay">
-											<div class="vcenter">
-												<div class="centrize">
-													<h4>Luxury Watch</h4>
-													<p>Graphic / Apps</p>
-												</div>
-											</div>
-										</div>
-									</a>
-									<img src="images/portfolio/1.jpg" alt="">
-								  </div>
-								  <div class="project web apps">
-									<a class="open-project" href="project-2.html">
-										<div class="project-overlay">
-											<div class="vcenter">
-												<div class="centrize">
-													<h4>Colorful Tees</h4>
-													<p>Web / Apps</p>
-												</div>
-											</div>
-										</div>
-									</a>
-									<img src="images/portfolio/2.jpg" alt="">
-								  </div>
-								  <div class="project graphic video">
-									<a class="open-project" href="project-1.html">
-										<div class="project-overlay">
-											<div class="vcenter">
-												<div class="centrize">
-													<h4>Coffee Cups</h4>
-													<p>Graphic / Video</p>
-												</div>
-											</div>
-										</div>
-									</a>
-									<img src="images/portfolio/3.jpg" alt="">
-								  </div>
-								  <div class="project graphic">
-									<a class="open-project" href="project-1.html">
-										<div class="project-overlay">
-											<div class="vcenter">
-												<div class="centrize">
-													<h4>Stationary Branding</h4>
-													<p>Web</p>
-												</div>
-											</div>
-										</div>
-									</a>
-									<img src="images/portfolio/4.jpg" alt="">
-								  </div>
-								  <div class="project web video">
-									<a class="open-project" href="project-2.html">
-										<div class="project-overlay">
-											<div class="vcenter">
-												<div class="centrize">
-													<h4>Typewriter</h4>
-													<p>Graphic / Video</p>
-												</div>
-											</div>
-										</div>
-									</a>
-									<img src="images/portfolio/5.jpg" alt="">
-								  </div>
-								  <div class="project apps web">
-									<a class="open-project" href="project-1.html">
-										<div class="project-overlay">
-											<div class="vcenter">
-												<div class="centrize">
-													<h4>Magazine Cover</h4>
-													<p>Web / Apps</p>
-												</div>
-											</div>
-										</div>
-									</a>
-									<img src="images/portfolio/6.jpg" alt="">
-								  </div>
-								  <div class="project video web">
-									<a class="open-project" href="project-1.html">
-										<div class="project-overlay">
-											<div class="vcenter">
-												<div class="centrize">
-													<h4>An Ipad</h4>
-													<p>Video / Web</p>
-												</div>
-											</div>
-										</div>
-									</a>
-									<img src="images/portfolio/7.jpg" alt="">
-								  </div>
-							</div>
+						<div>
+							<p>Summary of Changes in version 4.10 d JUnit4 ( https://github.com/junit-team/junit4/blob/master/doc/ReleaseNotes4.10.md )</p>
+							<p>Na comparação destas duas versões existem particularidades que foram os decrescimentos qunato a métrica Complexidade Ciclomática nos métodos validateZeroArgConstructor(método) localizado em BlockJUnit4ClassRunner(classe) - runners (pacote),</p>
+							<p>No método getRoot(método) localizado em TemporaryFolder(classe) -  rules(pacote). Esse comportamento já era esperado devido as mudanças apontadas no Summary of Changes in version 4.10 do JUnit4. Que aponta que oram criados temporary folders recursivamente e aponta mudanças na criação aleatória de novos arquivos temporários.</p>
+							<p>O método apply(método) localizado em TestWatcher(classe)- rules(pacote) também apresentou decrescimento, provavelmente o RuleChain criado nessa versão que permite a ordenação dos TestRules.</p>
+							<p>Por fim o métoo apply(método) localizado e TestWatchman(classe)- rules(pacotes) apresentou redução da métrica CC, provavelmente peo mesmo motivo do método apply acima citado.</p>
 						</div>
+						<img class="sign" src="images/r4.9-r4.10/first.png" alt=""/>
+						<img class="sign" src="images/r4.9-r4.10/second.png" alt=""/>
+						<img class="sign" src="images/r4.9-r4.10/third.png" alt=""/>
 					</div>
+				</div>
 
-					<div class="row text-center">
-						<div class="col-md-12">
-							<h4>Interested in working together?</h4>
-							<a class="btn lowercase">hello@james.com</a><br/>
+				<div class="block-content">
+					<h3 class="block-title">Comparação r4.10 - r4.11 - Área: MLOC, Cor: Complexidade Ciclomática</h3>
+					<div class="row">
+						<div>
+							<p>Summary of Changes in version 4.11 d JUnit4 (https://github.com/junit-team/junit4/blob/master/doc/ReleaseNotes4.11.md)</p>
+							<p>
+								Na comparação relativa dessas duas versões houveram diversas variações. Houveram crescimentos  em dois métodos. 1: assertEquals(método) - Assert(classe) - junit (pacote) e 2: assertEquals(método) com outra assinatura - - Assert(classe) - junit (pacote).
+								Já o método assertNull(método)  - Assert(classe) - junit (pacote) apesentou decrescimento da métrica CC. Isso provavelmente aos Improvements to Assert and Assume sinalizados no Changelog.
+							</p>
+							<img class="sign" src="images/r4.10-r4.11/assert.png" alt=""/>
+							<p>O método assertNull(método) - Assert(classe) - framework(pacote) apresentou decrescimento da métrica CC. Também provavelmente devido as mudanças que vieram nos Asserts nesta versão.</p>
+							<img class="sign" src="images/r4.10-r4.11/assert-framework.png" alt=""/>
+							<p>Decrescimentos também foram notados nos métodos describeTo(método) - Assumption(classe) - internal(pacote) e addFields(método) - AllMembersSupplier(classe) - internal(pacote). Destaque para o descrbeTo que obteve um decrescimento mais significativo. </p>
+							<img class="sign" src="images/r4.10-r4.11/internal.png" alt=""/>
+							<p>No pacote rules percebe-se também decrescimentos na classe TemporaryFolder nos métodos newFolder, newFile e delete. Isso pode ser devido as melhoras nos Rules sinalizadas no Summary f hanges desta versão.</p>
+							<img class="sign" src="images/r4.10-r4.11/temporary.png" alt=""/>
+							<p>Outros métodos apresentaram decrescimento da métrica CC. Estes métodos foram: 1:getTestClass(método) - Description(classe) - runner (pacote), 2:validateDataPointFields(método) - Theories(classe) - theories(pacote), 3: getRunner(método) -  ClassRequest(classe) - requests(pacote) e evaluateStatement(método) - FailOnTimeout(classe) - statements(pacote). Estes decrescimentos devem ter ocorrido devido as melhoras nos testes e rules nesta versão. </p>
+							<p>E mais um método obteve crescimento da métrica CC nesta versão qu foi o método parallelize(método) - ParallelComputer(classe) - experimental(pacote)</p>
+							<img class="sign" src="images/r4.10-r4.11/general.png" alt=""/>
 						</div>
 					</div>
 				</div>
