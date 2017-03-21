@@ -130,7 +130,7 @@
 					<h3 class="block-title">Comparação r4.9 - r4.10 - Área: MLOC, Cor: Complexidade Ciclomática</h3>
 					<div class="row">
 						<div>
-							<p>Summary of Changes in version 4.10 d JUnit4 ( https://github.com/junit-team/junit4/blob/master/doc/ReleaseNotes4.10.md )</p>
+							<p>Summary of Changes in version 4.10 do JUnit4 ( https://github.com/junit-team/junit4/blob/master/doc/ReleaseNotes4.10.md )</p>
 							<p>Na comparação destas duas versões existem particularidades que foram os decrescimentos qunato a métrica Complexidade Ciclomática nos métodos validateZeroArgConstructor(método) localizado em BlockJUnit4ClassRunner(classe) - runners (pacote),</p>
 							<p>No método getRoot(método) localizado em TemporaryFolder(classe) -  rules(pacote). Esse comportamento já era esperado devido as mudanças apontadas no Summary of Changes in version 4.10 do JUnit4. Que aponta que oram criados temporary folders recursivamente e aponta mudanças na criação aleatória de novos arquivos temporários.</p>
 							<p>O método apply(método) localizado em TestWatcher(classe)- rules(pacote) também apresentou decrescimento, provavelmente o RuleChain criado nessa versão que permite a ordenação dos TestRules.</p>
@@ -146,7 +146,7 @@
 					<h3 class="block-title">Comparação r4.10 - r4.11 - Área: MLOC, Cor: Complexidade Ciclomática</h3>
 					<div class="row">
 						<div>
-							<p>Summary of Changes in version 4.11 d JUnit4 (https://github.com/junit-team/junit4/blob/master/doc/ReleaseNotes4.11.md)</p>
+							<p>Summary of Changes in version 4.11 do JUnit4 (https://github.com/junit-team/junit4/blob/master/doc/ReleaseNotes4.11.md)</p>
 							<p>
 								Na comparação relativa dessas duas versões houveram diversas variações. Houveram crescimentos  em dois métodos. 1: assertEquals(método) - Assert(classe) - junit (pacote) e 2: assertEquals(método) com outra assinatura - - Assert(classe) - junit (pacote).
 								Já o método assertNull(método)  - Assert(classe) - junit (pacote) apesentou decrescimento da métrica CC. Isso provavelmente aos Improvements to Assert and Assume sinalizados no Changelog.
@@ -161,6 +161,42 @@
 							<p>Outros métodos apresentaram decrescimento da métrica CC. Estes métodos foram: 1:getTestClass(método) - Description(classe) - runner (pacote), 2:validateDataPointFields(método) - Theories(classe) - theories(pacote), 3: getRunner(método) -  ClassRequest(classe) - requests(pacote) e evaluateStatement(método) - FailOnTimeout(classe) - statements(pacote). Estes decrescimentos devem ter ocorrido devido as melhoras nos testes e rules nesta versão. </p>
 							<p>E mais um método obteve crescimento da métrica CC nesta versão qu foi o método parallelize(método) - ParallelComputer(classe) - experimental(pacote)</p>
 							<img class="sign" src="images/r4.10-r4.11/general.png" alt=""/>
+						</div>
+					</div>
+				</div>
+
+				<div class="block-content">
+					<h3 class="block-title">Comparação r4.11 - r4.12 - Área: MLOC, Cor: Complexidade Ciclomática</h3>
+					<div class="row">
+						<div>
+							<p>Summary of Changes in version 4.12 do JUnit4 (https://github.com/junit-team/junit4/blob/master/doc/ReleaseNotes4.12.md)</p>
+							<p>
+								É perceptível que os pull requests com o intuito de melhorar os Test Runners deram resultados, pois 5 métodos pertencentes ao pacote runners apresentaram diminuição de suas complexidade ciclomática.
+								<img class="sign" src="images/r4.11-r4.12/runners1.png" alt=""/>
+								Esses métodos foram classBlock e getFilteredChildren da classe ParentRunner, o describeChild e withPotentialTimeout da classe BlockJUnit4classRunner, o méodo filter da classe JUnit38ClassRunner, o método allParameters da classe Parameterized e o método errorReportingRunner da classe ErrorReportingRunner.
+								<img class="sign" src="images/r4.11-r4.12/runners2.png" alt=""/>
+							</p>
+							<p>
+								Os Pull request aceitos para corrigir alguns bugs e melhorar funcionalidades doas assertions refletiram em o decrescimo do valor da Complexidade ciclomática de um método e o aumento em outro.
+								Os métodos assertEquals(com assinaturas diferentes) - Assert(classe) - junit(pacote).
+								<img class="sign" src="images/r4.11-r4.12/assert1.png" alt=""/>
+							</p>
+							<p>
+								Alguns métodos pertencentes ao pacote internal apresentaram decrescimo da Complexidade ciclomática,
+								porém é importante dar ênfase ao método addMultiPointMethods da classe AllMembersSupplier do pacote intenal que apresentou o maior decrescimo na diferencial relativa entre essas duas versões (Relação com a mudança External version of AssumptionViolatedException).
+								<img class="sign" src="images/r4.11-r4.12/internal.png" alt=""/>
+							</p>
+							<p>
+								Houveram diversas mudanças nas classes do Theories e alguns métodos tiveram a Complexdade ciclomática reduzida. Isso ocorreu nos métodos validateTestMethods e validateDataPointFields da classe Theories do pacote theories.
+								<img class="sign" src="images/r4.11-r4.12/theories1.png" alt=""/>
+								Além do método forValue da classe PotentialAssignment também do pacote theories.
+								<img class="sign" src="images/r4.11-r4.12/theories2.png" alt=""/>
+							</p>
+							<p>
+								As mudanças do Timeout for Tests afetaram o pacote model. Assim métodos tiveram variações de crescimento e decrescimento, os métodos são: validatePublicVoid (decrescimento) e FrameWorkmethod(crescimento) da classe FrameworkMethod e o método da classe FrameworkField.
+								<img class="sign" src="images/r4.11-r4.12/model.png" alt=""/>
+							</p>
+							<img class="sign" src="images/r4.11-r4.12/geral.png" alt=""/>
 						</div>
 					</div>
 				</div>
